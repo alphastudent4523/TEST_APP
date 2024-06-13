@@ -1,28 +1,10 @@
 import streamlit as st
-import pandas as pd
-import plotly.express as px
 # Layout configuration (adjust as needed)
 
 st.set_page_config(
     page_title="Financial Dashboard",
     layout="wide",
 )
-
-
-# Sample data: Trends in farming in India (replace this with actual data)
-data = {
-    "Year": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
-    "Crop Production (in million tons)": [250, 260, 270, 280, 290, 300, 310, 320, 330]
-}
-
-df = pd.DataFrame(data)
-
-# Create a line chart using Plotly
-fig = px.line(df, x="Year", y="Crop Production (in million tons)",
-              title="Trends in Farming in India")
-
-# Display the graph at the top of the app
-st.plotly_chart(fig)
 
 
 # Title with potentially custom styling
