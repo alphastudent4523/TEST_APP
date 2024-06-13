@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-
 # Layout configuration (adjust as needed)
+
 st.set_page_config(
     page_title="Financial Dashboard",
     layout="wide",
@@ -24,12 +24,6 @@ fig = px.line(df, x="Year", y="Crop Production (in million tons)",
 # Display the graph at the top of the app
 st.plotly_chart(fig)
 
-
-# Title with potentially custom styling
-st.markdown(
-    "<h1 style='text-align: center; color: #3F51B5; font-size: 36px;'>My Financial WorkBook</h1>",
-    unsafe_allow_html=True,
-)
 
 # Title with potentially custom styling
 st.markdown(
@@ -77,3 +71,4 @@ st.sidebar.button("Search")
 # You can include a separate CSS file or add custom styling within the Streamlit app
 # For example, to change background color:
 # st.write('<style>body { background-color: #F0F2F5; }</style>', unsafe_allow_html=True)
+
