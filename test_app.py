@@ -1,28 +1,14 @@
 import streamlit as st
-import pandas as pd
-import plotly.express as px
-# Layout configuration (adjust as needed)
+import project_test
+        
+
+def predict(N,P,K,temperature,humidity,ph,rainfall):
+    return project_test.calc_main(N,P,K,temperature,humidity,ph,rainfall)
 
 st.set_page_config(
-    page_title="Financial Dashboard",
+    page_title="CROP RECOMMENDATION SYSTEM",
     layout="wide",
 )
-
-
-# Sample data: Trends in farming in India (replace this with actual data)
-data = {
-    "Year": [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023],
-    "Crop Production (in million tons)": [250, 260, 270, 280, 290, 300, 310, 320, 330]
-}
-
-df = pd.DataFrame(data)
-
-# Create a line chart using Plotly
-fig = px.line(df, x="Year", y="Crop Production (in million tons)",
-              title="Trends in Farming in India")
-
-# Display the graph at the top of the app
-st.plotly_chart(fig)
 
 
 # Title with potentially custom styling
@@ -39,21 +25,22 @@ col3.metric("Average", "$4,964,411")
 col4.metric("Central Earnings", "$2,593,682")
 
 # Filter section with dropdown menus (adjust options as needed)
-number_label = "Enter a number (between 1 and 10):"
-selected_number = st.number_input(number_label, min_value=1, max_value=10, value=5)
-st.subheader('Please Filter')
-nitrogen_select = st.selectbox('Select Region', ('Elist Midwest', 'Northeast'))
-phosphorous_select = st.selectbox('Select Location', ('Farming', 'Office Bldg'))
-pottasium_select = st.multiselect('Select Construction', ('Rebar', 'Masonry', 'Metal Clad'))
+st.subheader('Enter The Details')
+nitrogen_select = st.number_input('Nitrogen Level', step=0.1)
+phosphorous_select = st.number_input('Phosphorous Level', step=0.1)
+pottasium_select = st.number_input('Pottasium Level', step=0.1)
+temperature_select=st.number_input("Temperature", step=0.1)
+humidity_select=st.number_input("humidity", step=0.1)
+pH_select=st.number_input("pH", step=0.1)
+Rainfall_select=st.number_input("Rainfall", step=0.1)
 
-# Progress section with customization options (replace with actual progress value)
-st.subheader('Progress')
-progress_value = 0.7  # Replace with actual progress (0.0 to 1.0)
-st.progress(progress_value)
-st.write(f"Progress: {int(progress_value * 100)}%")  # Display percentage value
+if st.button('Confirm'):
+    prediction=str(predict(nitrogen_select,phosphorous_select,pottasium_select,temperature_select,humidity_select,pH_select,Rainfall_select))
+    # Progress section with customization options (replace with actual progress value)
+    st.subheader('The Suitable Crop')
+    # Placeholder for charts section (replace with your charting library and data)
+    st.markdown(f'<img src="https://cdn.icon-icons.com/icons2/2930/PNG/512/sprout_leaf_plant_agriculture_ground_icon_183627.png" width="48" height="48"> {prediction}',unsafe_allow_html=True)
 
-# Placeholder for charts section (replace with your charting library and data)
-st.write('Charts Here!')
 
 # Navigation section with potentially custom styling
 st.sidebar.markdown(
@@ -71,3 +58,4 @@ st.sidebar.button("Search")
 # You can include a separate CSS file or add custom styling within the Streamlit app
 # For example, to change background color:
 # st.write('<style>body { background-color: #F0F2F5; }</style>', unsafe_allow_html=True)
+
