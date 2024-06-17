@@ -6,7 +6,7 @@ import numpy as np
 from sklearn.metrics import classification_report,confusion_matrix
 
 def calc_main(N,P,K,temperature,humidity,ph,rainfall):
-    df=pd.read_csv("crop_recommendation.csv")
+    df=pd.read_csv("Crop_recommendation.csv")
     X=df.iloc[:,:7].values
     y=df[["label"]].values.ravel()
 
