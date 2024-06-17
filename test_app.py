@@ -1,4 +1,4 @@
-import streamlit as st
+Dimport streamlit as st
 import project_test
         
 
@@ -17,12 +17,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-# Metrics section (replace placeholders with actual data)
-col1, col2, col3, col4 = st.columns(4)
-col1.metric("Total Investment", "$2,482,205,481")
-col2.metric("Most Frequent", "$847,300")
-col3.metric("Average", "$4,964,411")
-col4.metric("Central Earnings", "$2,593,682")
+ st.markdown(f'<img src="https://cdn.icon-icons.com/icons2/2930/PNG/512/greenhouse_conservatory_glasshouse_agriculture_farming_icon_183618.png" width="48" height="48"> {prediction}',unsafe_allow_html=True)
 
 # Filter section with dropdown menus (adjust options as needed)
 st.subheader('Enter The Details')
