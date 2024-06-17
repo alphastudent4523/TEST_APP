@@ -19,7 +19,7 @@ st.markdown(
 
 centered_html = """
 <div style="display: flex; justify-content: center;">
-   <img src="https://cdn.icon-icons.com/icons2/2930/PNG/512/greenhouse_conservatory_glasshouse_agriculture_farming_icon_183618.png" width="48" height="48"; align="center">
+   <img src="https://cdn.icon-icons.com/icons2/2930/PNG/512/greenhouse_conservatory_glasshouse_agriculture_farming_icon_183618.png" width="100" height="100"; align="center">
 </div>
 """
 
