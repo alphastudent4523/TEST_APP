@@ -13,7 +13,7 @@ st.set_page_config(
 
 # Title with potentially custom styling
 st.markdown(
-    "<h1 style='text-align: center; color: #3F51B5; font-size: 36px;'>My Financial WorkBook</h1>",
+    "<h1 style='text-align: center; color: #3F51B5; font-size: 36px;'>CROP RECOMMENDATION SYSTEM</h1>",
     unsafe_allow_html=True,
 )
 
