@@ -17,7 +17,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown(f'<img src="agriculture_icon.png" width="48" height="48"> {prediction}',unsafe_allow_html=True)
+st.markdown(f'<img src="agriculture_icon.png" width="48" height="48">',unsafe_allow_html=True)
 
 # Filter section with dropdown menus (adjust options as needed)
 st.subheader('Enter The Details')
